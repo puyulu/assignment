@@ -50,7 +50,7 @@ def parseArgs(argv):
     file_name = ''
     
     try:
-        opts, args = getopt.getopt(argv,"hs:f:",['help',"file_name="])
+        opts, args = getopt.getopt(argv,"hf:",['help',"file_name="])
     except getopt.GetoptError:
         usage()
         sys.exit(2)
