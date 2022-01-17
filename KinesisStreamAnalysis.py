@@ -76,8 +76,8 @@ def count_by_word(input_table_name):
         input_table.window(
             Tumble.over("1.minute").on("time").alias("one_minute_window")
         )
-        .group_by("group by fields")
-        .select("select fields from input_table_name")
+        .group_by("realization,projection_x_coordinate,projection_y_coordinate,bnds")
+        .select("time,realization,projection_x_coordinate,projection_y_coordinate,bnds")
     )
 
     return tumbling_window_table
